@@ -1,7 +1,10 @@
 """Tests for checklist module"""
 import os
+import pytest
+
 from pyobis import checklist as ch
 
+@pytest.mark.uses_internet
 def test_checklist():
     "checklist.list - basic test"
     res = ch.list(scientificname = 'Mola mola')
@@ -11,6 +14,7 @@ def test_checklist():
     assert int == res['results'][0]['taxonID'].__class__
     assert 'Mola mola' == res['results'][0]['species']
 
+@pytest.mark.uses_internet
 def test_checklist_redlist():
     "checklist.redlist - basic test"
     res = ch.redlist(scientificname = 'Mola mola')
@@ -20,6 +24,7 @@ def test_checklist_redlist():
     assert int == res['results'][0]['taxonID'].__class__
     assert 'Mola mola' == res['results'][0]['species']
 
+@pytest.mark.uses_internet
 def test_checklist_newest():
     "checklist.newest - basic test"
     res = ch.newest(scientificname = 'Mola mola')

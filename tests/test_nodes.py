@@ -1,7 +1,10 @@
 """Tests for nodes module"""
 import os
+import pytest
+
 from pyobis import nodes
 
+@pytest.mark.uses_internet
 def test_nodes():
     "nodes.search - basic test"
     res = nodes.search(id="4bf79a01-65a9-4db6-b37b-18434f26ddfc")
@@ -11,6 +14,7 @@ def test_nodes():
     assert str == str(res['results'][0]['description']).__class__
     assert str == res['results'][0]['id'].__class__
 
+@pytest.mark.uses_internet
 def test_nodes_activities():
     "nodes.activities - basic test"
     res = nodes.activities(id="4bf79a01-65a9-4db6-b37b-18434f26ddfc")
