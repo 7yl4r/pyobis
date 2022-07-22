@@ -1,6 +1,8 @@
 """Tests for occurrences module - search methods"""
+import json
 import os
 import pytest
+from unittest.mock import patch
 
 from pyobis import occurrences as occ
 
@@ -63,3 +65,21 @@ def test_occurrences_centroid():
     assert 'dict' == res.__class__.__name__
     assert 2 == len(res)
     assert list == list(res.keys()).__class__
+
+
+import example_responses_occurrence
+@pytest.mark.parametrize(
+    "mock_api_response",
+    [example_responses_occurrence.abra_alba, example_responses_occurrence.abra_alba_2]
+)
+def test_occurrences_search_mof(mock_api_response):
+    """
+    mock occ.search with MoFs that returns >1 result.
+    Demonstrates https://github.com/iobis/pyobis/issues/32.
+    """
+    with patch('pyobis.occurrences.occurrences.obis_GET') as obis_getter:
+        obis_getter.return_value = mock_api_response
+        res = occ.search(
+            scientificname="Abcdefg", mof=True
+        )
+        assert len(res > 0)
