@@ -1,21 +1,24 @@
 """Tests for dataset module"""
 import os
+
 import pytest
 
 from pyobis import dataset
 
+
 @pytest.mark.uses_internet
 def test_dataset_get():
     "dataset.get - basic test"
-    res = dataset.get(id = 'ec9df3b9-3b2b-4d83-881b-27bcbcd57b95')
-    assert 'dict' == res.__class__.__name__
+    res = dataset.get(id="ec9df3b9-3b2b-4d83-881b-27bcbcd57b95")
+    assert "dict" == res.__class__.__name__
     assert 2 == len(res)
-    assert dict == res['results'][0].__class__
+    assert dict == res["results"][0].__class__
+
 
 @pytest.mark.uses_internet
 def test_dataset():
     "dataset.search - basic test"
-    res = dataset.search(scientificname='Mola mola')
-    assert 'dict' == res.__class__.__name__
+    res = dataset.search(scientificname="Mola mola")
+    assert "dict" == res.__class__.__name__
     assert 2 == len(res)
-    assert dict == res['results'][0].__class__
+    assert dict == res["results"][0].__class__

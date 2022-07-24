@@ -6,20 +6,20 @@ repos:
     - id: check-ast
     - id: debug-statements
     - id: end-of-file-fixer
-      exclude: github_deploy_key_ioos_erddapy.enc
     - id: check-docstring-first
+      exclude: example_responses_occurrence.py
     - id: check-added-large-files
       exclude_types: [yaml]
     - id: requirements-txt-fixer
     - id: file-contents-sorter
       files: requirements-dev.txt
 
-- repo: https://github.com/PyCQA/flake8
-  rev: 4.0.1
-  hooks:
-    - id: flake8
-      exclude: docs/source/conf.py
-      args: [--max-line-length=105]
+# - repo: https://github.com/PyCQA/flake8
+#   rev: 4.0.1
+#   hooks:
+#     - id: flake8
+#       exclude: docs/source/conf.py
+#       args: [--max-line-length=105]
 
 - repo: https://github.com/pycqa/isort
   rev: 5.10.1
@@ -47,23 +47,23 @@ repos:
   hooks:
     - id: blackdoc
 
-- repo: https://github.com/econchick/interrogate
-  rev: 1.5.0
-  hooks:
-    - id: interrogate
-      exclude: ^(docs|setup.py|tests)
-      args: [--config=pyproject.toml]
+# - repo: https://github.com/econchick/interrogate
+#   rev: 1.5.0
+#   hooks:
+#     - id: interrogate
+#       exclude: ^(docs|setup.py|tests)
+#       args: [--config=pyproject.toml]
 
-- repo: https://github.com/codespell-project/codespell
-  rev: v2.1.0
-  hooks:
-    - id: codespell
-      exclude: >
-          (?x)^(
-              .*\.yaml
-          )$
-      args:
-        - --quiet-level=2
+# - repo: https://github.com/codespell-project/codespell
+#   rev: v2.1.0
+#   hooks:
+#     - id: codespell
+#       exclude: >
+#           (?x)^(
+#               .*\.yaml
+#           )$
+#       args:
+#         - --quiet-level=2
 
 - repo: https://github.com/asottile/pyupgrade
   rev: v2.34.0
@@ -77,11 +77,11 @@ repos:
   hooks:
     - id: add-trailing-comma
 
--   repo: https://github.com/pycqa/pydocstyle
-    rev: 6.1.1
-    hooks:
-      - id: pydocstyle
-        exclude: ^(docs|setup.py)
+# -   repo: https://github.com/pycqa/pydocstyle
+#     rev: 6.1.1
+#     hooks:
+#       - id: pydocstyle
+#         exclude: ^(docs|setup.py)
 
 ci:
     autofix_commit_msg: |
