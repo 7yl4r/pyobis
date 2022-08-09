@@ -22,23 +22,9 @@ def obis_GET(url, args, ctype, **kwargs):
     return out.json()
 
 
-def obis_write_disk(url, path, ctype, **kwargs):
-    out = requests.get(url, stream=True, **kwargs)
-    out.raise_for_status()
-    with open(path, "wb") as f:
-        for chunk in out.iter_content(chunk_size=1024):
-            if chunk:
-                f.write(chunk)
-    return path
-
-
 def stopifnot(x, ctype):
     if x != ctype:
         raise NoResultException("content-type did not equal " + str(ctype))
-
-
-def stop(x):
-    raise ValueError(x)
 
 
 def handle_arrstr(x):
