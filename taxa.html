@@ -1,21 +1,21 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>taxa module &mdash; pyobis 1.2.5 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>taxa module &mdash; pyobis 0.1.1.dev617+gd540b66fd documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=e9f600a9"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,14 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> pyobis
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyobis
           </a>
-              <div class="version">
-                1.2.5
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -44,8 +45,14 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="occurrences.html">occurrences module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">taxa module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pyobis.taxa.TaxaResponse"><code class="docutils literal notranslate"><span class="pre">TaxaResponse</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#methods">Methods:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyobis.taxa.search"><code class="docutils literal notranslate"><span class="pre">search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyobis.taxa.taxon"><code class="docutils literal notranslate"><span class="pre">taxon()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyobis.taxa.annotations"><code class="docutils literal notranslate"><span class="pre">annotations()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dataset.html">dataset module</a></li>
@@ -67,8 +74,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>taxa module</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">taxa module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/taxa.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -79,105 +86,121 @@
            <div itemprop="articleBody">
              
   <section id="module-pyobis.taxa">
-<span id="taxa-module"></span><span id="taxa"></span><h1>taxa module<a class="headerlink" href="#module-pyobis.taxa" title="Permalink to this heading"></a></h1>
+<span id="taxa-module"></span><span id="taxa"></span><h1>taxa module<a class="headerlink" href="#module-pyobis.taxa" title="Link to this heading"></a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="pyobis.taxa.TaxaQuery">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyobis.taxa.</span></span><span class="sig-name descname"><span class="pre">TaxaQuery</span></span><a class="reference internal" href="_modules/pyobis/taxa/taxa.html#TaxaQuery"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobis.taxa.TaxaQuery" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="pyobis.taxa.TaxaResponse">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyobis.taxa.</span></span><span class="sig-name descname"><span class="pre">TaxaResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyobis/taxa/taxa.html#TaxaResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobis.taxa.TaxaResponse" title="Link to this definition"></a></dt>
+<dd><p>An OBIS Taxa Response Class</p>
+</dd></dl>
 
-<p>A TaxaQuery object for fetching taxa records.</p>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyobis.taxa</span> <span class="kn">import</span> <span class="n">TaxaQuery</span>
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyobis</span><span class="w"> </span><span class="kn">import</span> <span class="n">taxa</span>
 
-<span class="n">query</span> <span class="o">=</span> <span class="n">TaxaQuery</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="n">api_url</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">get_search_url</span><span class="p">()</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">taxa</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">scientificname</span><span class="o">=</span><span class="s2">&quot;Mola mola&quot;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">query</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">query</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># Returns the data</span>
+<span class="n">query</span><span class="o">.</span><span class="n">api_url</span>  <span class="c1"># Returns the API URL</span>
+<span class="n">query</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>  <span class="c1"># Returns a pandas DataFrame</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">taxa</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">scientificname</span><span class="o">=</span><span class="s2">&quot;Mola mola&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">taxa</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))&quot;</span><span class="p">)</span>
+<span class="n">taxa</span><span class="o">.</span><span class="n">taxon</span><span class="p">(</span><span class="mi">10332</span><span class="p">)</span>
+<span class="n">taxa</span><span class="o">.</span><span class="n">taxon</span><span class="p">(</span><span class="mi">127405</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="methods">
-<h2>Methods:<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h2>
-<dl class="py method">
-<dt class="sig sig-object py" id="pyobis.taxa.TaxaQuery.search">
-<span class="sig-prename descclassname"><span class="pre">TaxaQuery.</span></span><span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scientificname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyobis/taxa/taxa.html#TaxaQuery.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobis.taxa.TaxaQuery.search" title="Permalink to this definition"></a></dt>
+<h2>Methods:<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobis.taxa.search">
+<span class="sig-prename descclassname"><span class="pre">pyobis.taxa.</span></span><span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scientificname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyobis/taxa/taxa.html#search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobis.taxa.search" title="Link to this definition"></a></dt>
 <dd><p>Get taxon records.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>scientificname</strong> – [String,Array] One or more scientific names from the
-OBIS backbone. All included and synonym taxa are included in the search</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scientificname</strong> – [String,Array] One or more scientific names from the
+OBIS backbone. All included and synonym taxa are included in the search</p></li>
+<li><p><strong>cache</strong> – [bool, optional] Whether to use caching. Defaults to True.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A dictionary</p>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyobis.taxa</span> <span class="kn">import</span> <span class="n">TaxaQuery</span>
-<span class="n">taxa</span> <span class="o">=</span> <span class="n">TaxaQuery</span><span class="p">()</span>
-<span class="n">taxa</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">scientificname</span> <span class="o">=</span> <span class="s1">&#39;Mola mola&#39;</span><span class="p">)</span>
-<span class="n">taxa</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">scientificname</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Mola mola&#39;</span><span class="p">,</span><span class="s1">&#39;Abra alba&#39;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyobis</span><span class="w"> </span><span class="kn">import</span> <span class="n">taxa</span>
+
+<span class="c1"># With caching enabled (default)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">taxa</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">scientificname</span><span class="o">=</span><span class="s1">&#39;Mola mola&#39;</span><span class="p">)</span>
+<span class="n">query</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+<span class="c1"># With caching disabled</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">taxa</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">scientificname</span><span class="o">=</span><span class="s1">&#39;Mola mola&#39;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">query</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+<span class="c1"># Get the data</span>
+<span class="n">query</span><span class="o">.</span><span class="n">data</span> <span class="c1"># return the fetched data</span>
+<span class="n">query</span><span class="o">.</span><span class="n">api_url</span> <span class="c1"># get the OBIS API URL for the built query</span>
+<span class="n">query</span><span class="o">.</span><span class="n">mapper_url</span> <span class="c1"># get the OBIS Mapper URL (if it exists)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="pyobis.taxa.TaxaQuery.taxon">
-<span class="sig-prename descclassname"><span class="pre">TaxaQuery.</span></span><span class="sig-name descname"><span class="pre">taxon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyobis/taxa/taxa.html#TaxaQuery.taxon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobis.taxa.TaxaQuery.taxon" title="Permalink to this definition"></a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobis.taxa.taxon">
+<span class="sig-prename descclassname"><span class="pre">pyobis.taxa.</span></span><span class="sig-name descname"><span class="pre">taxon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyobis/taxa/taxa.html#taxon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobis.taxa.taxon" title="Link to this definition"></a></dt>
 <dd><p>Get taxon by ID</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>id</strong> – [Fixnum] An OBIS taxon identifier</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – [Fixnum] An OBIS taxon identifier</p></li>
+<li><p><strong>cache</strong> – [bool, optional] Whether to use caching. Defaults to True.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A dictionary</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A TaxaResponse object</p>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyobis.taxa</span> <span class="kn">import</span> <span class="n">TaxaQuery</span>
-<span class="n">taxa</span> <span class="o">=</span> <span class="n">TaxaQuery</span><span class="p">()</span>
-<span class="n">taxa</span><span class="o">.</span><span class="n">taxon</span><span class="p">(</span><span class="mi">545439</span><span class="p">)</span>
-<span class="n">taxa</span><span class="o">.</span><span class="n">taxon</span><span class="p">(</span><span class="mi">402913</span><span class="p">)</span>
-<span class="n">taxa</span><span class="o">.</span><span class="n">taxon</span><span class="p">(</span><span class="mi">406296</span><span class="p">)</span>
-<span class="n">taxa</span><span class="o">.</span><span class="n">taxon</span><span class="p">(</span><span class="mi">415282</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyobis</span><span class="w"> </span><span class="kn">import</span> <span class="n">taxa</span>
+
+<span class="c1"># With caching enabled (default)</span>
+<span class="n">query1</span> <span class="o">=</span> <span class="n">taxa</span><span class="o">.</span><span class="n">taxon</span><span class="p">(</span><span class="mi">545439</span><span class="p">)</span>
+<span class="n">query1</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+<span class="c1"># With caching disabled</span>
+<span class="n">query1</span> <span class="o">=</span> <span class="n">taxa</span><span class="o">.</span><span class="n">taxon</span><span class="p">(</span><span class="mi">545439</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">query1</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="pyobis.taxa.TaxaQuery.annotations">
-<span class="sig-prename descclassname"><span class="pre">TaxaQuery.</span></span><span class="sig-name descname"><span class="pre">annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scientificname</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyobis/taxa/taxa.html#TaxaQuery.annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobis.taxa.TaxaQuery.annotations" title="Permalink to this definition"></a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyobis.taxa.annotations">
+<span class="sig-prename descclassname"><span class="pre">pyobis.taxa.</span></span><span class="sig-name descname"><span class="pre">annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scientificname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyobis/taxa/taxa.html#annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyobis.taxa.annotations" title="Link to this definition"></a></dt>
 <dd><p>Get scientific name annotations by the WoRMS team.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>scientificname</strong> – [String] Scientific name. Leave empty to include all taxa.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scientificname</strong> – [String] Scientific name. Leave empty to include all taxa.</p></li>
+<li><p><strong>cache</strong> – [bool, optional] Whether to use caching. Defaults to True.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A dictionary</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A TaxaResponse Object</p>
 </dd>
 </dl>
 <p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyobis.taxa</span> <span class="kn">import</span> <span class="n">TaxaQuery</span>
-<span class="n">taxa</span> <span class="o">=</span> <span class="n">TaxaQuery</span><span class="p">()</span>
-<span class="n">taxa</span><span class="o">.</span><span class="n">annotations</span><span class="p">(</span><span class="n">scientificname</span><span class="o">=</span><span class="s2">&quot;Abra&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyobis</span><span class="w"> </span><span class="kn">import</span> <span class="n">taxa</span>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="pyobis.taxa.TaxaQuery.get_search_url">
-<span class="sig-prename descclassname"><span class="pre">TaxaQuery.</span></span><span class="sig-name descname"><span class="pre">get_search_url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyobis.taxa.TaxaQuery.get_search_url" title="Permalink to this definition"></a></dt>
-<dd><p>Get the corresponding API URL for the query.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>OBIS API URL for the corresponding query</p>
-</dd>
-</dl>
-<p>Usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># supports usage for any query from any module</span>
-<span class="kn">from</span> <span class="nn">pyobis.taxa</span> <span class="kn">import</span> <span class="n">TaxaQuery</span>
-<span class="n">query</span> <span class="o">=</span> <span class="n">TaxaQuery</span>
-<span class="n">query</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">scientificname</span><span class="o">=</span><span class="s2">&quot;Mola mola&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="o">.</span><span class="n">get_search_url</span><span class="p">()</span>
+<span class="c1"># With caching enabled (default)</span>
+<span class="n">query1</span> <span class="o">=</span> <span class="n">taxa</span><span class="o">.</span><span class="n">annotations</span><span class="p">(</span><span class="n">scientificname</span><span class="o">=</span><span class="s2">&quot;Abra&quot;</span><span class="p">)</span>
+<span class="n">query1</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+<span class="c1"># With caching disabled</span>
+<span class="n">query1</span> <span class="o">=</span> <span class="n">taxa</span><span class="o">.</span><span class="n">annotations</span><span class="p">(</span><span class="n">scientificname</span><span class="o">=</span><span class="s2">&quot;Abra&quot;</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">query1</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
